@@ -228,7 +228,6 @@ h1 em { font-style: normal; color: var(--accent); }
         </div>
         <div class="end right"><span class="code">AMS</span><span class="city">Amsterdam</span></div>
       </div>
-      <p class="lede" id="status">Bengaluru to Amsterdam, and the first time on an international flight. Watch the clock, learn a Dutch word a day with its Hindi, and cheer them on.</p>
       <button class="cheer" id="cheer" type="button">Cheer them on</button>
     </div>
     <div class="duo">
@@ -251,7 +250,6 @@ h1 em { font-style: normal; color: var(--accent); }
     <div class="progress">
       <div class="bar" role="progressbar" aria-label="Share of the wait that has passed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="barwrap"><i id="bar"></i></div>
       <div class="progress-meta">
-        <span>Counting since Wed 7 Oct, 18:55 Amsterdam time</span>
         <span id="pct">0% of the wait done</span>
       </div>
     </div>
@@ -429,7 +427,7 @@ h1 em { font-style: normal; color: var(--accent); }
     var n = Math.round((istDay(DEP) - istDay(now)) / 864e5);
     $('sleeps').textContent = done ? 'Wheels up' : n > 1 ? n + ' sleeps to go' : n === 1 ? '1 sleep to go' : 'No more sleeps. Today is the day';
     if (done) {
-      $('status').textContent = 'Wheels up. Safe travels, and enjoy Amsterdam.';
+      if ($('status')) $('status').textContent = 'Wheels up. Safe travels, and enjoy Amsterdam.';
       if (!wasDone) { wasDone = true; confetti(null); flyPlane(); }
     }
 
